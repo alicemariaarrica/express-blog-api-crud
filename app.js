@@ -1,11 +1,11 @@
 //Esercizio parte 1
-//Usando l'array dei post fornito con le relative immagini, creare un file di routing (routers/posts.js) che conterrà le rotte necessario per l'entità post.
+//1. Usando l'array dei post fornito con le relative immagini, creare un file di routing (routers/posts.js) che conterrà le rotte necessario per l'entità post.
 //Tutte le risposte saranno in json.
-//All'interno creare le seguenti rotte:
+//2. All'interno creare le seguenti rotte:
 // / - index: ritornerà un html con una ul che stamperà la lista dei post
 // /:slug - show: tramite il parametro dinamico che rappresenta lo slug del post, ritornerà un json con i dati del post
-//Scrivere tutte le funzioni delle rotte nel controller dedicato
-//Registrare il router dentro app.js con il prefisso posts/.
+//3. Scrivere tutte le funzioni delle rotte nel controller dedicato
+//4. Registrare il router dentro app.js con il prefisso posts/.
 
 //Esercizio parte 2
 //Per il nostro blog, concentriamoci sul creare una rotta:
