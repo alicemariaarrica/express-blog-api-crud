@@ -49,4 +49,10 @@ exports.index = (req, res) => {
 
   exports.show = (req, res) => {
     const slug = req.params.slug;
-    const post = posts.find(post => post.slug === slug);
+    const post = posts.find(post => post.slug === slug);{
+    if (post) {
+        res.json(post);
+      } else {
+        res.status(404).json({ error: "Post non trovato" });
+      }
+    };
