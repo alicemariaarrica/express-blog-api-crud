@@ -38,3 +38,15 @@ const posts = [
 ];
 
 module.exports = posts;
+
+
+
+exports.index = (req, res) => {
+    const postList = posts.map(post => `<li>${post.title}</li>`).join("");
+    res.send(`<ul>${postList}</ul>`);
+  };
+  
+
+  exports.show = (req, res) => {
+    const slug = req.params.slug;
+    const post = posts.find(post => post.slug === slug);
