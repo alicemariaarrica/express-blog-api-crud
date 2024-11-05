@@ -13,3 +13,12 @@
 //Questa dovrà riceve i dati in formato json e dovrà restituire l'elenco dei posts in formato json incluso il nuovo elemento appena creato
 //Tutte le funzioni delle rotte dovranno essere scritte nel controller dedicato.
 //Testare le rotte tramite Postman.
+
+
+const express = require("express");
+const app = express();
+const port = 3333;
+
+
+app.use(express.static(path.join(__dirname, "public")));
+
