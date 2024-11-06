@@ -1,4 +1,4 @@
-const menu = require('./menu.js')
+const menu = require('../db/menu.js');
 
 const index = (req, res) => {
     res.json({ data: menu, count: menu.length })
