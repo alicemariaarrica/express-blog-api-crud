@@ -30,6 +30,10 @@ const app = express()
 
 const menu = require('./db/menu.js')
 
+app.get('/pizze', (req, res) => {
+  res.json({ data: menu, count: menu.length })
+});
+
 
 app.listen(3000, () => {
   console.log("Server started on port 3000")
