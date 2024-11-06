@@ -14,4 +14,6 @@ router.get("/posts/:slug", postsController.getPostBySlug);
 
 router.get("/posts/tag/:tag", postsController.getPostsByTag);
 
+router.post("posts/", postsController.store); //es 2
+
 module.exports = router;

@@ -22,3 +22,25 @@ exports.show = (req, res) => {
     res.status(404).json({ error: "Post non trovato" });
   }
 };
+
+exports.store = (req, res) => {
+    const { title, slug, content, image, tags } = req.body;
+  
+   
+
+    //esercizio 2
+    
+    const newPost = {
+      title,
+      slug,
+      content,
+      image,
+      tags
+    };
+  
+  
+    posts.push(newPost);
+  
+  
+    res.json(posts);
+  };
