@@ -49,7 +49,8 @@ app.get('/cibi/:id', (req, res) => {
 
 
 
-const postsController = require('./controllers/postsControllers');
+const postsControllers = require('./controllers/postsControllers');
+app.get('/cibo', postsControllers.index);
 
 app.listen(3000, () => {
   console.log("Server started on port 3000")
