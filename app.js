@@ -24,7 +24,10 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 const postsRouter = require("./routers/posts");
-app.use("/api", postsRouter); 
+
+
+
+app.use("/posts", postsRouter);
 
 app.listen(port, () => {
   console.log(`Server avviato su http://localhost:${port}`);
