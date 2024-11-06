@@ -27,8 +27,8 @@
 const express = require('express')
 const app = express()
 
+const menu = require('./db/menu.js');  
 
-const menu = require('./db/menu.js')
 
 //per visualizzare tutti i cibi
 app.get('/cibi', (req, res) => {
