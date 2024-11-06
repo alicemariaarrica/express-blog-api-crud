@@ -30,7 +30,7 @@ const app = express()
 
 const menu = require('./db/menu.js')
 
-app.get('/pizze', (req, res) => {
+app.get('/cibi', (req, res) => {
   res.json({ data: menu, count: menu.length })
 });
 
