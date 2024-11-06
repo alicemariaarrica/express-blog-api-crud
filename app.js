@@ -30,9 +30,23 @@ const app = express()
 
 const menu = require('./db/menu.js')
 
+//per visualizzare tutti i cibi
 app.get('/cibi', (req, res) => {
   res.json({ data: menu, count: menu.length })
 });
+
+
+//per visualizzare un cibo
+app.get('/cibi/:id', (req, res) => {
+
+
+  const cibo = menu.find((cibo) => cibo.id === parseInt(req.params.id))
+  if (!cibo) {
+    return res.status(404).json({ error: "No food found with that id" })
+  }
+  return res.status(200).json({ data: cibo })
+});
+
 
 
 app.listen(3000, () => {
