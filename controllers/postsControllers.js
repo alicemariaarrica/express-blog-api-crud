@@ -1,7 +1,7 @@
-const menu = require('../db/menu.js');
+const menu = require('../db/posts.js');
 
 const index = (req, res) => {
-    res.json({ data: menu, count: menu.length })
+    res.json({ data: posts, count: posts.length })
   }
 
 

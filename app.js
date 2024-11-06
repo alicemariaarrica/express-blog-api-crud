@@ -31,26 +31,26 @@ const app = express()
 
 
 //per visualizzare tutti i cibi
-app.get('/cibi', (req, res) => {
-  res.json({ data: menu, count: menu.length })
+app.get('/posts', (req, res) => {
+  res.json({ data: posts, count: posts.length })
 });
 
 
 //per visualizzare un cibo
-app.get('/cibi/:id', (req, res) => {
+app.get('/posts/:id', (req, res) => {
 
 
-  const cibo = menu.find((cibo) => cibo.id === parseInt(req.params.id))
-  if (!cibo) {
-    return res.status(404).json({ error: "No food found with that id" })
+  const post = menu.find((cibo) => post.id === parseInt(req.params.id))
+  if (!post) {
+    return res.status(404).json({ error: "No post found with that id" })
   }
-  return res.status(200).json({ data: cibo })
+  return res.status(200).json({ data: post })
 });
 
 
 
 const postsControllers = require('./controllers/postsControllers');
-app.get('/cibo', postsControllers.index);
+app.get('/posts', postsControllers.index);
 
 app.listen(3000, () => {
   console.log("Server started on port 3000")

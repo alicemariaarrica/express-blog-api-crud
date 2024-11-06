@@ -1,4 +1,4 @@
-const menu = [
+const posts = [
   {
     title: "Ciambellone",
 		slug: "ciambellone",
@@ -43,6 +43,6 @@ const menu = [
   },
 ];
 //1.
-module.exports= menu;
+module.exports= posts;
 
 
