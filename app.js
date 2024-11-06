@@ -19,7 +19,15 @@
 
 //Esercizio parte 3
 //Per il nostro blog, concentriamoci sul creare 2 rotte:
-// h /:id [PUT] - rotta update del crud che riceverà dei dati e modificherá un post esistente. Questa dovrà riceve i dati in formato json e dovrà restituire il json dell’elemento appena creato.
-// i /:id [DELETE] - rotta destroy del crud che dovrà restituire un 404 nel caso non sia stato trovato un post corrispondente.
-// l Restituire come responso la nuova array escluso il post eliminato
-// m Testare le rotte tramite Postman.
+// h. /:id [PUT] - rotta update del crud che riceverà dei dati e modificherá un post esistente. Questa dovrà riceve i dati in formato json e dovrà restituire il json dell’elemento appena creato.
+// i. /:id [DELETE] - rotta destroy del crud che dovrà restituire un 404 nel caso non sia stato trovato un post corrispondente.
+// l. Restituire come responso la nuova array escluso il post eliminato
+// m. Testare le rotte tramite Postman.
+
+const express = require('express')
+const app = express()
+
+app.listen(3000, () => {
+  console.log("Server started on port 3000")
+});
+
