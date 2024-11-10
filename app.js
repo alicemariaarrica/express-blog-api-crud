@@ -32,6 +32,7 @@ app.use(express.json());
 
 
 const postsRouter = require('./routers/posts');
+const postsControllers = require('./controllers/postsControllers.js')
 
 
 app.use('/posts', postsRouter); 
