@@ -24,35 +24,18 @@
 // l. Restituire come responso la nuova array escluso il post eliminato
 // m. Testare le rotte tramite Postman.
 
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
 
+app.use(express.json());
 
 
-//per visualizzare tutti i cibi
-app.get('/posts', (req, res) => {
-  res.json({ data: posts, count: posts.length })
-});
+const postsRouter = require('./routers/posts');
 
 
-//per visualizzare un cibo
-app.get('/posts/:id', (req, res) => {
-
-
-  const post = menu.find((cibo) => post.id === parseInt(req.params.id))
-  if (!post) {
-    return res.status(404).json({ error: "No post found with that id" })
-  }
-  return res.status(200).json({ data: post })
-});
-
-
-
-const postsControllers = require('./controllers/postsControllers');
-app.get('/posts', postsControllers.index);
+app.use('/posts', postsRouter); 
 
 app.listen(3000, () => {
-  console.log("Server started on port 3000")
+  console.log("Server started on port 3000");
 });
-
