@@ -1,28 +1,40 @@
 const menu = require('../db/arrayPosts.js');
-
 exports.store = (req, res) => {
- 
   const { title, content, image } = req.body;
 
-
   if (!title || !content) {
-    return res.status(400).json({ error: 'Il titolo e il contenuto sono obbligatori.' });
+    return res.status(400).json({ error: 'Scrivi il titolo e il content' });
   }
 
   const newPost = {
-    id: posts.length + 1, 
-    title: title,         
-    content: content,     
-    image: image || 'default.jpg'  
+    id: menu.length + 1,
+    title: title,
+    content: content,
+
   };
 
- 
-  posts.push(newPost);
 
- 
+  menu.push(newPost);
+
+
   return res.status(201).json({
     message: "Post creato con successo",
-    data: posts, 
-    count: posts.length 
+    data: menu,
+    count: menu.length
   });
+};
+
+exports.delete = (req, res) => {
+  const postId = parseInt(req.params.id);
+
+
+  const postIndex = menu.findIndex(post => post.id === postId);
+
+  if (postIndex === -1) {
+    return res.status(404).json({ error: 'Post nonn trovato' });
+  }
+
+  const updatedPosts = menu.filter(post => post.id !== postId);
+
+  return res.json(updatedPosts);
 };
